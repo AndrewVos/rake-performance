@@ -17,4 +17,8 @@ describe "rake-performance" do
   it "displays a the total time taken" do
     @output.should match /Total time taken: \d\.\d\d\d milliseconds/
   end
+
+  it "invokes the task" do
+    @output.should include "This is a rake task!"
+  end
 end
