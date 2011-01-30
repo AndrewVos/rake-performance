@@ -23,5 +23,9 @@ describe TimeHelper do
     it "displays the time difference for hours, minutes and seconds" do
       test_time_difference([1, 1, 1], [4, 5, 6], "03:04:05")
     end
+
+    it "displays the time difference when the first time is greater than the second time" do
+      test_time_difference([4, 5, 6], [1, 1, 1], "03:04:05")
+    end
   end
 end
