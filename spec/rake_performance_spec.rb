@@ -13,4 +13,8 @@ describe "rake-performance" do
   it "displays the task end time" do
     @output.should include "Task \'do_something_useful\' ended at #{Time.now.to_s}"
   end
+
+  it "displays a the total time taken" do
+    @output.should match /Total time taken: \d\.\d\d\d milliseconds/
+  end
 end

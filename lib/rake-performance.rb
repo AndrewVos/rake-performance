@@ -3,9 +3,12 @@ module Rake
     alias :old_invoke :invoke
 
     def invoke(*args)
-      puts "Task '#{@name}' started at #{Time.now}"
+      start_time = Time.now
+      puts "Task '#{@name}' started at #{start_time}"
       old_invoke(args)
-      puts "Task '#{@name}' ended at #{Time.now}"
+      end_time = Time.now
+      puts "Task '#{@name}' ended at #{end_time}"
+      puts "Total time taken: #{(end_time - start_time) * 1000} milliseconds"
     end
   end
 end
