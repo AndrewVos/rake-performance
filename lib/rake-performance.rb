@@ -1,3 +1,5 @@
+require_relative 'time_helper' 
+
 module Rake
   class Task
     alias :old_invoke :invoke
@@ -8,7 +10,7 @@ module Rake
       old_invoke(args)
       end_time = Time.now
       puts "Task '#{@name}' ended at #{end_time}"
-      puts "Total time taken: #{(end_time - start_time) * 1000} milliseconds"
+      puts "Total time taken: #{TimeHelper.time_difference(start_time, end_time)}" 
     end
   end
 end

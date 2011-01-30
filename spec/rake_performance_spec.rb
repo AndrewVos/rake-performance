@@ -8,17 +8,9 @@ task :do_something_useful do
 end
 
 describe "rake-performance" do
-  def get_time_now
-    @time_now_calls ||= 0
-    time_now = Time.new(1983, 10, 23, 10, 10, 23) if @time_now_calls == 0
-    time_now = Time.new(1983, 10, 23, 11, 11, 28) if @time_now_calls == 1
-    @time_now_calls = @time_now_calls + 1
-    time_now
-  end
-
   before :each do
     task = Rake::Task[:do_something_useful]
-    Time.stub(:now) { get_time_now }
+    Time.stub(:now).and_return Time.new(1983, 10, 23, 10, 10, 23), Time.new(1983, 10, 23, 11, 11, 28)
     $stdout = StringIO.new
     task.invoke
     @output = $stdout.string
@@ -34,7 +26,7 @@ describe "rake-performance" do
   end
 
   it "displays a the total time taken" do
-    @output.should match /Total time taken: 3665000.0 milliseconds/
+    @output.should include "Total time taken: 01:01:05"
   end
 
   it "invokes the task" do
