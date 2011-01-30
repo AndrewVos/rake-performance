@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{rake-performance}
-  s.version = ""
+  s.version = "0.1.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Andrew Vos"]
@@ -16,9 +16,11 @@ Gem::Specification.new do |s|
     ".autotest",
     ".rspec",
     "Rakefile",
+    "VERSION",
     "autotest/discover.rb",
     "lib/rake_performance.rb",
     "lib/time_helper.rb",
+    "rake-performance.gemspec",
     "spec/rake_performance_spec.rb",
     "spec/time_helper_spec.rb"
   ]
