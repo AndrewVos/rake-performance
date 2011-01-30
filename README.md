@@ -11,7 +11,7 @@ Installation
 Usage
 -----
 
-    gem require 'rake_performance'
+    require 'rake_performance'
 
 Example
 -------
