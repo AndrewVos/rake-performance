@@ -9,3 +9,5 @@ Jeweler::Tasks.new do |gem|
   gem.add_development_dependency "rspec"
   gem.add_development_dependency "rake"
 end
+
+Jeweler::RubygemsDotOrgTasks.new
