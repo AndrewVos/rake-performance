@@ -1,4 +1,4 @@
-require_relative 'time_helper' 
+require_relative 'time_helper'
 
 module Rake
   class Task
