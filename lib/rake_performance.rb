@@ -7,7 +7,7 @@ module Rake
     def invoke(*args)
       start_time = Time.now
       puts "Task '#{@name}' started at #{start_time}"
-      old_invoke(args)
+      old_invoke(*args)
       end_time = Time.now
       puts "Task '#{@name}' ended at #{end_time}"
       puts "Total time taken: #{TimeHelper.time_difference(start_time, end_time)}" 
