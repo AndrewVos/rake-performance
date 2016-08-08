@@ -1,7 +1,7 @@
-require 'rake'
-require 'rspec'
-require 'stringio'
-require File.join(File.dirname(__FILE__), "..", "lib", "rake_performance")
+# require 'rake'
+# require 'rspec'
+# require 'stringio'
+require 'spec_helper'
 
 task :do_something_useful do
   puts 'This is a rake task!'

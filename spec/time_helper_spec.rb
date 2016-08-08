@@ -1,4 +1,4 @@
-require File.join(File.dirname(__FILE__), "..", "lib", "time_helper")
+require 'spec_helper'
 
 describe TimeHelper do
   describe ".time_difference" do
